@@ -13,6 +13,12 @@ playButton.addEventListener("click",
 
     function () {
 
+        /*container.innerHTML = "";*/
+
+        //genero le bombe
+        const userBomb = arrayBombRandom(1, 100, 16);
+        console.log(userBomb);
+
         //aggiungo numeri e caselle
         for (let i = 1; i <= 100; i++) {
 
@@ -29,8 +35,27 @@ playButton.addEventListener("click",
 
                 function () {
 
-                    square.classList.add("azure"); //colore
-                    console.log("Selezionata la casella numero:", i); //console per visualizzare
+                    if(userBomb.includes(i)) {
+
+                        //casella bomba
+                        square.classList.add("bomb")
+
+                        //messaggio di game over
+                        if (alert("Game over bellino, riprova")){
+                            
+                        } else {
+
+                            window.location.reload();
+                        }
+
+                    } else {
+
+                        //casella buona
+                        square.classList.add("safe");
+
+                        //console per visualizzare
+                        console.log("Selezionata la casella numero:", i);
+                    }
                 }
             );
         }
