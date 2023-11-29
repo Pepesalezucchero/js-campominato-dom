@@ -65,8 +65,12 @@ h1 {
     font-size: 20px;
 }
 
-.azure {
+.safe {
     background-color: lightskyblue;
+}
+
+.bomb {
+    background-color: lightcoral;
 }
 
 /*footer*/
