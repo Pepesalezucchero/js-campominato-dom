@@ -37,6 +37,32 @@ playButton.addEventListener("click",
     }
 );
 
+
+//funzioni
+
+//funzione che genera i numeri voluti
+function numbersMinMax (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//funzione che crea le bombe
+function arrayBombRandom(minNum, maxNum, lunghezzaArr) {
+
+    //array con le bombe
+    const arrayBomb = [];
+
+   //riempio l'array
+   while (arrayBomb.length < lunghezzaArr) {
+
+    let userBomb = numbersMinMax (minNum, maxNum);
+
+        if (!arrayBomb.includes(userBomb)) {
+            arrayBomb.push(userBomb);
+        }
+    }
+    return arrayBomb;
+}
+
 /*
 const userSquare = createMyGrid("div", "square");
 
